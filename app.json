@@ -1,41 +1,75 @@
 {
   "expo": {
     "name": "MU:MEET",
-    "slug": "mu-meet",
+    "slug": "mumeet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mu-meet",
     "userInterfaceStyle": "light",
-    "newArchEnabled": false,
-    "jsEngine": "hermes",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mumeet.app"
+      "bundleIdentifier": "com.mumeet.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "kakao40e6e457f7c728abd08240f47ff0d267",
+              "naverlogin"
+            ]
+          }
+        ],
+        "LSApplicationQueriesSchemes": [
+          "kakaokompassauth",
+          "kakaolink",
+          "naversearchapp",
+          "naversearchthirdlogin"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mumeet.app"
+      "package": "com.mumeet.app",
+      "versionCode": 1,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "kakao40e6e457f7c728abd08240f47ff0d267"
+            },
+            {
+              "scheme": "naverlogin"
+            }
+          ],
+          "category": [
+            "DEFAULT",
+            "BROWSABLE"
+          ]
+        }
+      ]
     },
+    "scheme": "mumeet",
+    "plugins": [
+      "expo-router"
+    ],
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "splash": {
-      "image": "./assets/images/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "plugins": [
-      "expo-router"
-    ],
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
@@ -51,6 +85,9 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
+    },
+    "developmentClient": {
+      "silentLaunch": true
     }
   }
 }
